@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Festival Details - Events4U</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/styles.css">
+    <style>
+        .festival-card {
+            margin-bottom: 20px;
+        }
+
+        .festival-image {
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+      <a class="navbar-brand m-2 d-grid p-md-1" href="Home.html">Events4U.</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end p-md-1"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 festival-card">
+                <div class="card d-flex">
+                    <img src="images/Summer-Beats-Festival.jpg" class="card-img-left festival-image" alt="Summer Beats Festival">
+                    <div class="card-body">
+                        <h5 class="card-title">Music Festival</h5>
+                        <p class="card-text">Some details about the music festival go here. You can add more text to provide additional information.</p>
+
+                       <!-- Add a form for customer details -->
+						<form method="post" action="ConfirmBookingServlet?Id=" class="booking-form mt-4">
+						    <div class="form-group">
+						        <label for="eventName">Event Name:</label>
+						        <input type="text" id="eventName" name="eventName" class="form-control" readonly required>
+						    </div>
+						    <div class="form-group">
+						        <label for="eventDate">Event Date:</label>
+						        <input type="date" id="eventDate" name="eventDate" class="form-control" required>
+						    </div>
+						    <div class="form-group">
+						        <label for="eventTime">Event Time:</label>
+						        <input type="time" id="eventTime" name="eventTime" class="form-control" required>
+						    </div>
+						    <!-- Add more form fields as needed -->
+						
+						    <div class="text-center mt-2">
+						        <button type="submit" class="btn btn-success">Confirm Booking</button>
+						    </div>
+						</form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 mt-1">
+        <p>&copy; 2023 Events4U. All rights reserved.</p>
+    </footer>
+
+   <script>
+    // JavaScript to capture the event name when a card is clicked
+    document.addEventListener("DOMContentLoaded", function () {
+        var eventNameInput = document.getElementById("eventName");
+
+        // Add a click event listener to each card
+        var festivalCards = document.querySelectorAll(".festival-card");
+        festivalCards.forEach(function (card) {
+            card.addEventListener("click", function () {
+                // Get the event name from the card content
+                var eventName = card.querySelector(".card-title").innerText;
+                // Update the visible label
+                eventNameInput.value = eventName;
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

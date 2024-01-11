@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main - Events4U</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Set a light background color for better visibility */
+        }
+
+        #registration-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            color: #fff;	
+        }
+
+        /* Center the buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style for admin and user buttons */
+        .admin-button,
+        .user-button {
+            width: 100%; /* Set the width to 100% for full width */
+            margin-bottom: 10px; /* Add some bottom margin for spacing between buttons */
+        }
+    </style>
+</head>
+<body>
+    <div id="registration-container" class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4 text-light">Welcome to Events4U</h2>
+                <form action="Register.html" method="post">
+                    <div class="m-5 text-center button-container">
+                        
+                        <!-- User Button -->
+                        <button type="submit" class="btn bg-secondary-subtle user-button">
+                             User
+                        </button>     
+                    </div>
+                </form>
+                <form action="adminlogin.html" method="post">					
+					<div class="m-5 text-center button-container">
+                        
+                        <!-- Admin Button -->
+                        <button type="submit" class="btn bg-secondary-subtle admin-button">
+                             Admin
+                        </button>     
+                    </div>
+				</form>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
